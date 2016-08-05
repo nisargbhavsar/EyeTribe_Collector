@@ -26,10 +26,10 @@ public class RS232Protocol extends Thread {
 				try {
 					System.out.println(port.readBytes(bytesCount));
 					// For Synch Testing
-					// System.out.println("Recieved the Bytes");
-					// System.out.println("Finished Reading bytes, writing now");
-					// port.writeByte((byte) 1);
-					// System.out.println("Finished Writing");
+//					 System.out.println("Recieved the Bytes");
+//					 System.out.println("Finished Reading bytes, writing now");
+//					 port.writeByte((byte) 1);
+//					 System.out.println("Finished Writing");
 				} catch (SerialPortException e) {
 					e.printStackTrace();
 				}
