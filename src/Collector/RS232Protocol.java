@@ -1,6 +1,6 @@
 package Collector;
-//import java.awt.event.KeyEvent;
 
+import java.awt.Color;
 import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
@@ -18,8 +18,10 @@ public class RS232Protocol extends Thread {
 				if (GazeListener.get_isStream() == false) {
 					GazeListener.startStreaming();
 					EyeTest.startStreaming.setText("Streaming Data...");
+					EyeTest.startStreaming.setBackground(Color.GREEN);
 				} else if (GazeListener.get_isStream() == true) {
 					EyeTest.saveFile();
+					EyeTest.startStreaming.setBackground(Color.RED);
 				}
 
 				int bytesCount = event.getEventValue();

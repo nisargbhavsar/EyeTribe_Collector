@@ -1,4 +1,5 @@
 package Collector;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -84,6 +85,7 @@ public class EyeTest extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				GazeListener.startStreaming();
+				startStreaming.setBackground(Color.GREEN);
 				startStreaming.setText("Streaming...");
 			}
 		});
@@ -95,6 +97,7 @@ public class EyeTest extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				streamData = gazeListener.stopStreaming();
 				startStreaming.setText("Start Streaming");
+				startStreaming.setBackground(Color.RED);
 				try {
 					// Check if there is data in the stream data ArrayList
 					if (streamData.size() == 0) {
